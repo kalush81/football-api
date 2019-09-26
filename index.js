@@ -1,11 +1,11 @@
 const express = require('express');
-const db =  require('./db');
-const Team = require('./team/model')
+// const db =  require('./db');
+// const Team = require('./team/model')
+const teamRouter = require('./team/router')
 
 const app = express();
-//app.use(Team)
-
 const port = process.env.PORT || 4000
 
+app.use(teamRouter)
 
 app.listen(port, () => console.log(`listening on port: ${port}`))
